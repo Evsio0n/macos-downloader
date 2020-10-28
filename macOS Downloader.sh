@@ -121,7 +121,7 @@ Check_Volume_Support()
 {
 	echo -e $(date "+%b %m %H:%M:%S") ${text_progress}"> Checking system support."${erase_style}
 
-	if [[ $volume_version_short == "10."[7-9] || $volume_version_short == "10.1"[0-5] ]]; then
+	if [[ $volume_version_short == "10."[7-9] || $volume_version_short == "10.1"[0-5] || $volume_version_short == "11."[0-9] ]]; then
 		echo -e $(date "+%b %m %H:%M:%S") ${move_up}${erase_line}${text_success}"+ System support check passed."${erase_style}
 	else
 		echo -e $(date "+%b %m %H:%M:%S") ${text_error}"- System support check failed."${erase_style}
@@ -155,7 +155,7 @@ Check_Internet()
 {
 	echo -e $(date "+%b %m %H:%M:%S") ${text_progress}"> Checking for internet conectivity."${erase_style}
 
-	if [[ $(ping -c 2 www.google.com) == *transmitted* && $(ping -c 2 www.google.com) == *received* ]]; then
+	if [[ $(ping -c 2 www.bing.com) == *transmitted* && $(ping -c 2 www.bing.com) == *received* ]]; then
 		echo -e $(date "+%b %m %H:%M:%S") ${move_up}${erase_line}${text_success}"+ Integrity conectivity check passed."${erase_style}
 	else
 		echo -e $(date "+%b %m %H:%M:%S") ${text_error}"- Integrity conectivity check failed."${erase_style}
